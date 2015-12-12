@@ -1,0 +1,22 @@
+{
+  "name": "thumbnail_gulp",
+  "version": "1.0.0",
+  "description": "Gulp build version of thumbnail_list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-react": "^3.1.0",
+    "gulp-util": "^3.0.7",
+    "reactify": "^1.1.1",
+    "source-stream": "0.0.2",
+    "watchify": "^3.6.1"
+  },
+  "devDependencies": {}
+}
