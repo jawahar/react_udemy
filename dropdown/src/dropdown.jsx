@@ -4,8 +4,19 @@ var ListItem = require('./listitem.jsx');
 
 module.exports = React.createClass({
 
+  getInitialState: function() {
+    return { open: false }
+  },
+
   handleClick: function() {
-    alert("click in dropdown");
+    this.setState({ open: !this.state.open})
+  },
+
+  handleItemClick: function(item) {
+    this.setState({
+      open: false,
+      itemTitle: item
+    })
   },
 
 
@@ -13,18 +24,22 @@ module.exports = React.createClass({
 
     var list = this.props.items.map(function(item) {
       // alert("map "+item);
-      return <ListItem item={item} />
-    });
+      return <ListItem
+              item={item}
+              whenItemClicked={this.handleItemClick}
+              className={this.state.itemTitle === item ? "active" : ""}
+              />
+    }.bind(this));
 
     return <div className="dropdown">
           <Button
             whenClicked={this.handleClick}
             className="btn-default"
-            title={this.props.title}
+            title={this.state.itemTitle || this.props.title}
             subTitleClassName="caret"
             />
-          <ul>
-          {list}
+          <ul className={"dropdown-menu " + (this.state.open ? "show" : "")}>
+            {list}
           </ul>
           </div>
         }
