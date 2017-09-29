@@ -1,0 +1,15 @@
+.topic {
+  text-align: center;
+  .image-preview {
+    animation: fade-in 1.65s ease-out;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1.0;
+      }
+    }
+  }
+}
